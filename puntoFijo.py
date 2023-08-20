@@ -1,4 +1,4 @@
-from math import *
+dirfrom math import *
 
 
 def g(x):
