@@ -1,11 +1,13 @@
-dirfrom math import *
+from math import *
+import sympy as sp
 
-
-def g(x):
-    return ((4 - 1/(2*x) - (2*x**2)/7)**2) ** (1/3)
-
-
-def puntoFijo(x0, n, tol):
+def puntoFijo():
+    x = sp.symbols('x')
+    g = input('Digite la funcion ')
+    g = sp.lambdify(x, g)
+    x0 = float(input('Digite un valor inicial '))
+    n = int(input('Digite las iteraciones a realizar '))
+    tol = float(input('Digite el error maximo permitido '))
     print('  i      Xi        error')
     print('  0     ', x0)
     for i in range(n):
@@ -18,4 +20,4 @@ def puntoFijo(x0, n, tol):
         print(' ', i + 1, '  ', round(x, 5), '  ', round(error, 5), )
 
 
-result = puntoFijo(1.5, 20, 0.0001)
+puntoFijo()
